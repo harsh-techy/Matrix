@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+void display(int x[10][10],int ar,int ac)
+{
+    for(int i=0;i<ar;i++)
+    {
+        for(int j=0;j<ac;j++)
+            printf("%d ",x[i][j]); 
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int a[10][10],b[10][10],r,c;
+    printf("\n===========================================================\n");
+      printf("                      MATRIX TRANSPOSE                     ");
+    printf("\nNAME : Harsh Choudhary\nROLL NO. : 1901610100074\n\n");
+    printf("Enter No of Rows    :");
+    scanf("%d",&r);
+    printf("Enter No of Columns :");
+    scanf("%d",&c);
+    printf("Enter Matrix :\n");
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf(" A%d%d :",i+1,j+1);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Before Transpose :\n");
+    display(a,r,c);
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+          b[j][i]=a[i][j];
+    }
+    printf("After Transpose :\n");
+    display(b,c,r);
+    printf("\n==========================================================\n");
+    return 0;
+}
